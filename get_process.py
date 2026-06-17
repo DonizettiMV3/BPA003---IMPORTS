@@ -6,7 +6,7 @@ def get_syspax():
     # call_pwsh('Syspax_DownloadFiles_Api.ps1')
 
     #realizas select em input arquivos procurando status 'Novo'
-    rows = select_arquivos('Novso')
+    rows = select_arquivos('Novo')
 
     #Loop sobre dados retornados
     for row in rows:
