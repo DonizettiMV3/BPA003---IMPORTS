@@ -7,7 +7,7 @@ def select_arquivos(status):
     cursor = conn.cursor()
 
     cursor.execute(f"""
-                SELECT 
+                SELECT id,
                     id_arquivo_syspax,
                     nome_arquivo,
                     caminho_arquivo
