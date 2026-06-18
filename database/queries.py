@@ -24,5 +24,34 @@ def select_arquivos(status):
     return data
 
 
+def imports_deleteTemp():
+    conn = create_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(f"""
+                DELETE FROM tbl_input_processos_temp
+                """)
+        
+    cursor.close()
+    conn.close()
+
+
+def imports_selectTemp():
+
+    conn = create_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(f"""
+                SELECT COUNT(id) FROM tbl_input_processos_temp
+                """)
+    
+    data = cursor.fetchall()
+    
+    cursor.close()
+    conn.close()
+
+
+    return data
+
 if __name__ == "__main__":
     pass
