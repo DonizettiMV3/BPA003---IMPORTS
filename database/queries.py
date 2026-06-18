@@ -23,6 +23,21 @@ def select_arquivos(status):
 
     return data
 
+def update_arquivo(id,set):
+
+    conn = create_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(f"""
+                UPDATE tbl_input_arquivos
+                SET {set}
+                WHERE id = {id}
+                """)
+    
+    
+    cursor.close()
+    conn.close()
+
 
 def imports_deleteTemp():
     conn = create_connection()
