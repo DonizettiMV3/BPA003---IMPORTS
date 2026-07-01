@@ -44,7 +44,7 @@ for row in rows:
 
         #Atualiza arquivo
         sh.update_arquivo(id = id,
-                          set =  f"""status_processamento = 'Syspax - Processado', fim_processamento_syspax='{datetime.now().strftime("%d/%m/%Y %H:%M:%S")}', inicio_processamento_syspax = '{date_now}""")
+                          set =  f"""status_processamento = 'Syspax - Processado', fim_processamento_syspax='{datetime.now().strftime("%d/%m/%Y %H:%M:%S")}', inicio_processamento_syspax = '{date_now}'""")
 
     #Atualiza arquivo no sysoax
     call_pwsh('Syspax_UpdateStatus_Api.', f'"{id_syspax}"', f'"Processando"')
