@@ -38,35 +38,21 @@ def update_arquivo(id,set):
     cursor.close()
     conn.close()
 
-
-def imports_deleteTemp():
+def update_process(condition, set):
     conn = create_connection()
     cursor = conn.cursor()
 
     cursor.execute(f"""
-                DELETE FROM tbl_input_processos_temp
-                """)
-        
-    cursor.close()
-    conn.close()
-
-
-def imports_selectTemp():
-
-    conn = create_connection()
-    cursor = conn.cursor()
-
-    cursor.execute(f"""
-                SELECT COUNT(id) FROM tbl_input_processos_temp
+                UPDATE tbl_input_processos
+                SET {set}
+                WHERE {condition}
                 """)
     
-    data = cursor.fetchall()
     
     cursor.close()
     conn.close()
 
 
-    return data
 
 if __name__ == "__main__":
     pass
