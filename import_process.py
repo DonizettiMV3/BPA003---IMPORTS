@@ -30,7 +30,7 @@ for row in rows:
 
     if count <= 0:
         #Dados não encontrados, setando erro no arquivo
-        db.update_arquivo(id_syspax, f"status_processamento = 'Erro', data_importacao='{date_now}'")
+        db.update_arquivo(id, f"status_processamento = 'Erro', data_importacao='{date_now}'")
 
     else:
 
@@ -53,7 +53,7 @@ for row in rows:
         set= f"status ='Não importado', execucao_importacao='Identificado campo(s) necessário(s) vazio(s)', data_importacao = '{date_now}'")
 
         #Realiza update de arquivo para Lemmit - Pendente
-        sh.update_arquivo(id= id_syspax,
+        sh.update_arquivo(id= id,
                           set= f"status_processamento = 'Lemitti - Pendente', data_importacao='{date_now}'")
 
     #Chama script para atualizar status no syspax
